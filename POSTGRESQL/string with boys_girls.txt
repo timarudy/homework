@@ -1,0 +1,5 @@
+create table users(id serial, gender varchar(50), name varchar(50), email varchar(50));
+insert into info (gender, name, email) values ('m', 'Vasya', 'mmm@mail.com'), ('m', 'Alex', 'mmm@gmail.com'), ('m', 'Alexey', 'alexey@gmail.com'), ('f', 'Helen', 'hell@gmail.com'), ('f', 'Jenny', 'eachup@gmail.com'), ('f', 'Lora', 'tpicks@gmail.com');
+select concat('we have ', count(*), ' boys!') as normas_1 from users where gender = 'm';
+select concat('we have ', count(*), ' girls!') as normas_2 from users where gender = 'f';
+select case when gender = 'm' then ('this is ', users.name ,' he has email', users.email ) else ('this is ', users.name ,' she has email', users.email ) end from users;
